@@ -1,20 +1,68 @@
-body {
-  background-image: url('sand.jpg');
-  background-size: cover;
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .rectangle {
   width: 80%;
   height: 120px;
   background-image: url('wood.jpg');
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  color: rgb(0, 0, 0);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -50px;
+  width: 100%;
+  gap: 10px;
+}
+
+
+.numbers-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
   font-size: 24px;
   font-weight: bold;
+}
+
+.button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #333333;
+}
+
+body {
+  background-image: url('sand.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }

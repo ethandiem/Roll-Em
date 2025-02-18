@@ -1,6 +1,6 @@
-### Roll-Em
+# Roll-Em
 
-# The goal of this project is to create a game that I used to play called Roll-Em.
+### The goal of this project is to create a game that I used to play called Roll-Em.
 
 My problem statement is: The game Roll-Em is a relatively simple game to make, yet it is not very popular and there is no online version of this game available and I would like for me and my family to be able to play this game with just a link.
 

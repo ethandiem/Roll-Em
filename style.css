@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.rectangle {
+.woodRectangle {
   width: 500px;
   height: 120px;
   background-image: url('/images/wood.jpg');

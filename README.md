@@ -1,6 +1,6 @@
-Roll-Em
+### Roll-Em
 
-The goal of this project is to create a game that I used to play called Roll-Em.
+# The goal of this project is to create a game that I used to play called Roll-Em.
 
 My problem statement is: The game Roll-Em is a relatively simple game to make, yet it is not very popular and there is no online version of this game available and I would like for me and my family to be able to play this game with just a link.
 
@@ -27,3 +27,9 @@ When the user is able to remove all pins from the block of wood, an alert will a
 At either of these screens a "Try Again" button will appear which should reset the dice as well as the buttons to be visible again. The alert displayed should be hidden as well.
 
 I used an API called api.quotable.io in this project to display a motivational quote at the top of the page when the "Try Again" screen is displayed to keep the user with a fighting spirit! The quote should dissapear when the "Try Again" button is pressed.
+
+This game can be played with a friend in two different ways.
+
+Two users on different devices can play at the same time and see who has the least amount of pins left at the end of each round. Score can be kept based on who wins each round.
+
+Two users on the same device can take turns playing and whoever ends up with the least amount of pins left after each user has gone, the winner is kept in the score and a new round starts.

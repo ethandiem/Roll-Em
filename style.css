@@ -11,8 +11,8 @@
 }
 
 .woodRectangle {
-  width: 500px;
-  height: 120px;
+  width: 800px;
+  height: 200px;
   background-image: url('/images/wood.jpg');
   background-size: cover;
   background-position: center;
@@ -30,13 +30,13 @@
   position: absolute;
   bottom: 60px;
   width: 100%;
-  gap: 39.5px;
+  gap: 60px;
 }
 
 .numbers-container {
   display: flex;
   justify-content: center;
-  gap: 38px;
+  gap: 60px;
   width: 100%;
   font-size: 24px;
   font-weight: bold;
@@ -44,7 +44,7 @@
 
 .button {
   width: 1px;
-  height: 90px;
+  height: 170px;
   border: none;
   cursor: pointer;
   border-radius: 50%;
@@ -64,7 +64,7 @@ body {
   background-color: #5c17cc;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 30px;
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
@@ -73,8 +73,8 @@ body {
 }
 
 .dice {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background-color: white;
   color: black;
   font-size: 30px;
@@ -135,7 +135,7 @@ body {
   font-style: italic;
   font-size: 25px;
   text-align: center;
-  margin-bottom: 520px;
+  margin-bottom: 600px;
   padding: 20px;
   background-color: #f8f8f8;
   border: 2px solid #ccc;

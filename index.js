@@ -52,7 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
     numbersContainer.appendChild(numsToTen);
   }
 
+  // function fetchProgrammingJoke() {
+  //   fetch('https://v2.jokeapi.dev/joke/Programming?type=single')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       if (data.joke) {
+  //         showMessage(data.joke);
+  //       }
+  //     })
+  //     .catch(err => console.log('Error fetching joke:', err));
+  // }
+
   rollButton.addEventListener("click", function () {
+    rollButton.disabled = true;
     messageDisplay.innerText = "";
     const firstRoll = Math.floor(Math.random() * 6) + 1;
     const secondRoll = Math.floor(Math.random() * 6) + 1;
@@ -118,6 +130,15 @@ document.addEventListener("DOMContentLoaded", function () {
       button.disabled = true;
       button.onclick = null
     });
+
+    rollButton.disabled = false;
+
+    let remainingButtons = buttons.filter(btn => btn.style.visibility !== "hidden").length;
+    if(remainingButtons === 0) {
+      showMessage("You Win!");
+      fetchRandomQuote();
+      rollButton.disabled = true;
+    }
   }
 
     btn1.onclick = handleClick;
@@ -134,24 +155,77 @@ resultMessage.classList.add("result-message");
 resultMessage.style.display = "none";
   rectangle.appendChild(resultMessage);
 
-  function showMessage(text) {
-    resultMessage.innerText = text;
-    resultMessage.style.display = "flex";
+let tryAgainButton = document.createElement("button");
+  tryAgainButton.innerText = "Try Again";
+  tryAgainButton.classList.add("try-again-button");
+  tryAgainButton.style.display = "none";
+  resultMessage.appendChild(tryAgainButton);
+
+  const quoteDisplay = document.createElement("div");
+  quoteDisplay.classList.add("quote-display");
+  document.body.prepend(quoteDisplay);
+
+  function fetchRandomQuote() {
+    fetch("http://api.quotable.io/random")
+      .then(response => response.json())
+      .then(data => {
+        const quoteText = data.content;
+        const quoteAuthor = data.author;
+        displayQuote(`${quoteText} — ${quoteAuthor}`);
+      })
+      .catch(error => {
+        displayQuote("Error fetching a quote.", error);
+      });
   }
+
+  function displayQuote(quote) {
+    if(quote) {
+    quoteDisplay.innerHTML = `<p>${quote}</p>`;
+    quoteDisplay.style.display = "block";
+  } else {
+    quoteDisplay.style.display = "none";
+    }
+  }
+
+  function resetGame() {
+    buttons.forEach(button => {
+      button.style.visibility = "visible";
+      button.style.pointerEvents = "auto";
+      button.disabled = true;
+    });
+
+    const defaultDiceAppearance = document.querySelectorAll(".dice");
+    defaultDiceAppearance.forEach(dice => {
+        dice.innerText = "🎲";
+      });
+
+    resultMessage.style.display = "none";
+    tryAgainButton.style.display = "none"
+    rollButton.disabled = false;
+    quoteDisplay.style.display = "none";
+  }
+
+  tryAgainButton.addEventListener("click", resetGame);
 
 function winOrLoss(turnsLeft) {
+  if(!turnsLeft) {
   let remainingButtons = buttons.filter(btn => btn.style.visibility !== "hidden").length;
 
-  if(remainingButtons === 0) {
-    showMessage("You Win!");
-    rollButton.disabled = true;
-  } else if(!turnsLeft) {
     setTimeout(() => {
       showMessage(`Close! Only ${remainingButtons} pins left`);
+      fetchRandomQuote();
       rollButton.disabled = true;
-    }, 2500);
+    }, 1500);
   }
 }
+
+function showMessage(text) {
+  resultMessage.innerHTML = `<p> ${text} </p>`;
+  resultMessage.appendChild(tryAgainButton);
+  resultMessage.style.display = "flex";
+  tryAgainButton.style.display = "block";
+}
+
   function getDiceEmoji(number) {
     const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
     return diceFaces[number - 1] || "🎲";

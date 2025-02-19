@@ -33,3 +33,5 @@ This game can be played with a friend in two different ways.
 Two users on different devices can play at the same time and see who has the least amount of pins left at the end of each round. Score can be kept based on who wins each round.
 
 Two users on the same device can take turns playing and whoever ends up with the least amount of pins left after each user has gone, the winner is kept in the score and a new round starts.
+
+https://trello.com/b/FjYQw7xv/roll-em

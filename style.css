@@ -13,7 +13,7 @@
 .woodRectangle {
   width: 800px;
   height: 200px;
-  background: url("images/wood.jpg")no-repeat;
+  background: url("images/wood.jpg");
   background-size: cover;
   background-position: center;
   position: relative;

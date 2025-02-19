@@ -197,9 +197,7 @@ let tryAgainButton = document.createElement("button");
     fetch("http://api.quotable.io/random")
       .then(response => response.json())
       .then(data => {
-        const quoteText = data.content;
-        const quoteAuthor = data.author;
-        displayQuote(`${quoteText} — ${quoteAuthor}`);
+        displayQuote(`${data.content} — ${data.author}`);
       })
       .catch(error => {
         displayQuote("Error fetching a quote.", error);
